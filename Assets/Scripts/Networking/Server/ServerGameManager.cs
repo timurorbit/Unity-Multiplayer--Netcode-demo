@@ -21,9 +21,11 @@ public class ServerGameManager : IDisposable
     private int queryPort;
 
     private MatchplayBackfiller backfiller;
-    
+
     private MultiplayAllocationService multiplayAllocationService;
-    
+
+    private Dictionary<string, int> teamIdToTeamIndex = new Dictionary<string, int>();
+
     public NetworkServer NetworkServer { get; private set; }
 
     public ServerGameManager(string serverIP, int serverPort,
@@ -77,20 +79,28 @@ public class ServerGameManager : IDisposable
 
         if (backfiller.NeedsPlayers())
         {
-            await backfiller.BeginBackfilling();  
+            await backfiller.BeginBackfilling();
         }
     }
 
     private void UserJoined(UserData user)
     {
-        backfiller.AddPlayerToMatch(user);
+        Team team = backfiller.GetTeamByUserId(user.userAuthId);
+        if (!teamIdToTeamIndex.TryGetValue(team.TeamId, out int teamIndex))
+        {
+            teamIndex = teamIdToTeamIndex.Count;
+            teamIdToTeamIndex.Add(team.TeamId, teamIndex);
+        }
+
+        user.teamIndex = teamIndex;
+
         multiplayAllocationService.AddPlayer();
         if (!backfiller.NeedsPlayers() && backfiller.IsBackfilling)
         {
             _ = backfiller.StopBackfill();
         }
     }
-    
+
     private void UserLeft(UserData user)
     {
         int playerCount = backfiller.RemovePlayerFromMatch(user.userAuthId);
@@ -132,7 +142,7 @@ public class ServerGameManager : IDisposable
     {
         NetworkServer.OnUserJoined -= UserJoined;
         NetworkServer.OnUserLeft -= UserLeft;
-        
+
         backfiller?.Dispose();
         multiplayAllocationService?.Dispose();
         NetworkServer?.Dispose();

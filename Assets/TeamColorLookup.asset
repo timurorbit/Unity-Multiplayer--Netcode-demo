@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a2b85eb17a78245834f20a6e673755, type: 3}
+  m_Name: TeamColorLookup
+  m_EditorClassIdentifier: 
+  teamColours:
+  - {r: 0.8773585, g: 0.12829298, b: 0.12829298, a: 1}
+  - {r: 0.293338, g: 0.8584906, b: 0.11743506, a: 1}
+  - {r: 0.12691349, g: 0.8679245, b: 0.8239849, a: 1}
+  - {r: 0.8396226, g: 0.21782663, b: 0.7431522, a: 1}
+  - {r: 0.9245283, g: 0.8894417, b: 0.13519046, a: 1}
+  - {r: 0.12415449, g: 0.14432758, b: 0.8490566, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
