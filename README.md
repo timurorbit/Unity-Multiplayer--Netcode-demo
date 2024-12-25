@@ -15,7 +15,7 @@ A simple Unity multiplayer demo using **Netcode for GameObjects**. Inspired by c
 ---
 
 ### Connect with me:
-[LinkedIn](https://www.linkedin.com/in/timur-shamilov-ba5ab41ba/) | [itch.io](https://itch.io) | [Steam](https://store.steampowered.com)
+[LinkedIn](https://www.linkedin.com/in/timur-shamilov-ba5ab41ba/)
 
 Happy coding! 🎯
 
